@@ -1,7 +1,7 @@
 prototype(DL.Gallery:Themes.BootstrapLightbox) < prototype(DL.Gallery:Themes.AbstractTheme) {
     templatePath = ${'resource://DL.Gallery/Private/Fusion/Themes/BootstrapLightbox/BootstrapLightbox.' + request.format}
 
-    figureAttributes = Neos.Fusion:Attributes {
+    figureAttributes {
         class {
             columnClass = ${themeSettings.columnClass ? themeSettings.columnClass : 'col-md-4'}
         }

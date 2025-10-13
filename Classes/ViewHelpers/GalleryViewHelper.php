@@ -20,7 +20,6 @@ use Neos\FluidAdaptor\Core\ViewHelper\AbstractTagBasedViewHelper;
 use Neos\Media\Domain\Model\AssetCollection;
 use Neos\Media\Domain\Model\Image;
 use Neos\Media\Domain\Model\Tag;
-use Neos\ContentRepository\Domain\Model\Node;
 use Neos\Media\Domain\Repository\ImageRepository;
 use Neos\Media\Domain\Repository\TagRepository;
 use Neos\Utility\ObjectAccess;
@@ -52,7 +51,7 @@ class GalleryViewHelper extends AbstractTagBasedViewHelper
     protected $settings;
 
     /**
-     * @var Node
+     * @var \Neos\ContentRepository\Core\Projection\ContentGraph\Node
      */
     protected $galleryNode;
 
@@ -68,11 +67,11 @@ class GalleryViewHelper extends AbstractTagBasedViewHelper
     public function initializeArguments()
     {
         parent::initializeArguments();
-        $this->registerArgument('galleryNode', Node::class, 'The gallery node', true);
+        $this->registerArgument('galleryNode', \Neos\ContentRepository\Core\Projection\ContentGraph\Node::class, 'The gallery node', true);
     }
 
     /**
-     * @param Node $galleryNode
+     * @param \Neos\ContentRepository\Core\Projection\ContentGraph\Node $galleryNode
      * @return string
      */
     public function render()

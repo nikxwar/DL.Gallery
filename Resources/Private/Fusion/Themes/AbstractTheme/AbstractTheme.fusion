@@ -1,16 +1,17 @@
 prototype(DL.Gallery:Themes.AbstractTheme) < prototype(Neos.Neos:Content) {
     selectedTheme = ${node.properties.theme}
 
-    attributes.class = Neos.Fusion:RawArray {
+    attributes.class = Neos.Fusion:DataStructure {
         theme = ${'theme-' + q(node).property('theme')}
     }
 
-    figureAttributes = Neos.Fusion:Attributes {
+    figureAttributes = Neos.Fusion:DataStructure {
         itemprop = 'associatedMedia'
         itemtype = 'http://schema.org/ImageObject'
-        class = Neos.Fusion:RawArray {
+        class = Neos.Fusion:DataStructure {
             neos-nodetypes-image = 'neos-nodetypes-image'
         }
+        @process.makeAttributes = ${Neos.Array.toHtmlAttributesString(value)}
     }
 
     @context.themeSettings = ${Configuration.setting('DL.Gallery.themes.' + node.properties.theme + '.themeSettings')}

@@ -42,11 +42,11 @@ class TagDataSource extends AbstractDataSource
     protected $tagRepository;
 
     /**
-     * @param NodeInterface|null $node
+     * @param \Neos\ContentRepository\Core\Projection\ContentGraph\Node|null $node
      * @param array $arguments
      * @return QueryResultInterface
      */
-    public function getData(NodeInterface $node = null, array $arguments = [])
+    public function getData(\Neos\ContentRepository\Core\Projection\ContentGraph\Node $node = null, array $arguments = [])
     {
         $tagCollection = $this->tagRepository->findAll();
         $tags['']['label'] = '-';

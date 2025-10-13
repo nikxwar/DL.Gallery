@@ -42,11 +42,11 @@ class AssetCollectionDataSource extends AbstractDataSource
     protected $assetCollectionRepository;
 
     /**
-     * @param NodeInterface $node
+     * @param \Neos\ContentRepository\Core\Projection\ContentGraph\Node $node
      * @param array $arguments
      * @return array
      */
-    public function getData(NodeInterface $node = null, array $arguments = [])
+    public function getData(\Neos\ContentRepository\Core\Projection\ContentGraph\Node $node = null, array $arguments = [])
     {
         $options = [['label' => '-', 'value' => '']];
         $assetCollections = $this->assetCollectionRepository->findAll();

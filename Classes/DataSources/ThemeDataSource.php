@@ -40,11 +40,11 @@ class ThemeDataSource extends AbstractDataSource
     }
 
     /**
-     * @param NodeInterface|null $node
+     * @param \Neos\ContentRepository\Core\Projection\ContentGraph\Node|null $node
      * @param array $arguments
      * @return array
      */
-    public function getData(NodeInterface $node = null, array $arguments = [])
+    public function getData(\Neos\ContentRepository\Core\Projection\ContentGraph\Node $node = null, array $arguments = [])
     {
 
         $themes = [];

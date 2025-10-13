@@ -21,7 +21,6 @@
           group: sourceBySelectedAssets
         label: i18n
         reloadIfChanged: true
-
     assetCollection:
       type: Neos\Media\Domain\Model\AssetCollection
       ui:
@@ -51,10 +50,10 @@
           group: presentation
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
-             values:
-              'unsorted':
+            values:
+              unsorted:
                 label: i18n
-              'resource.filename':
+              resource.filename:
                 label: i18n
               title:
                 label: i18n
@@ -71,10 +70,10 @@
           editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-             ASC:
-               label: i18n
-             DESC:
-               label: i18n
+              ASC:
+                label: i18n
+              DESC:
+                label: i18n
         reloadIfChanged: true
     theme:
       type: string
